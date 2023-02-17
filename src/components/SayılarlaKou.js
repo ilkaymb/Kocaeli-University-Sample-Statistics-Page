@@ -24,7 +24,6 @@ const Card = props => (
 function SayılarlaKou(){
   
 
-
     return (
      <div style={{padding:"75px 0"}}>
              
@@ -32,7 +31,7 @@ function SayılarlaKou(){
 <Container>
 <Header>                
  <h1 className="header">SAYILARLA KOU</h1>
- <hr class="divider"/>
+ <hr className="divider"/>
 
 
 </Header>

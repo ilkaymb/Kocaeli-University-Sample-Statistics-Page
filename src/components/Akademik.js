@@ -1,29 +1,10 @@
 
 
 import Slide from 'react-reveal/Slide';
-import {VictoryPie,VictoryBar,VictoryChart,VictoryLabel,VictoryAxis} from 'victory';
-import TrackVisibility from 'react-on-screen'; // CommonJs : require('react-on-screen').default
+import {VictoryPie} from 'victory';
 import { IoIosSquare } from "react-icons/io";
 import { Grid, Row, Col } from 'rsuite';
 
-const Roboto = "'Roboto', sans-serif";
-const fontSize = 10;
-
-const fakülteData =[
-    { x: "Bilgisayar ve Bilişim Fakültesi", y: 1213},
-    { x: "Denizcilik Fakültesi", y: 1162},
-    { x: "Elektrik Elektronik Fakültesi", y: 3009},
-    { x: "Fen Edebiyat Fakültesi", y: 1800 },
-    { x: "Gemi İnşaatı ve Deniz Bilimleri Fakültesi", y: 827 },
-    { x: "İnşaat Fakültesi", y: 3317},
-    { x: "İşletme Fakültesi", y: 2542},
-    { x: "Kimya - Metalurji Fakültesi", y: 1784},
-    { x: "Maden Fakültesi", y: 1840 },
-    { x: "Makina Fakültesi ", y: 1768 },
-    { x: "Mimarlık Fakültesi ", y: 3171 },
-    { x: "Tekstil Teknolojileri ve Tasarım Fakültesi", y: 583 },
-    { x: "Uçak ve Uzay Bilimleri Fakültesi ", y: 1492 }
-  ];
 
 function Akademik(){
 
@@ -33,7 +14,7 @@ function Akademik(){
         <div className="academic-box" style={{padding:"75px 0"}}>
          
         <h1 className="header">AKADEMİK PERSONEL SAYISI</h1>
-        <hr class="divider"/>
+        <hr className="divider"/>
 
        
         <Grid fluid>

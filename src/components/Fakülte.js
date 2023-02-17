@@ -35,7 +35,7 @@ function Fakülte() {
 
             <div className="fakülte-box" style={{padding:"75px 0"}}>
                  <h1 className="header" style={{color:'white'}}>LİSANS ÖĞRENCİ SAYISI</h1>
-                 <hr class="divider"/>
+                 <hr className="divider"/>
 
   <Content>
 <Grid fluid>
@@ -46,7 +46,7 @@ function Fakülte() {
  <TrackVisibility once>
 
 {({ isVisible }) => isVisible && 
-<div  style={{display:"flex",width:"100%",height:"80%",justifyContent:"center",alignItems:"center"}}>
+<div  style={{display:"flex",width:"100%",height:"80vh",justifyContent:"center",alignItems:"center"}}>
     <VictoryChart 
      height={500}
         width={1000}
