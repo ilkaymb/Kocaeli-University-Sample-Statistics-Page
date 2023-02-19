@@ -2,10 +2,12 @@ import './styles/Sayılar.css';
 import 'rsuite/dist/rsuite.min.css'; 
 
 import OpeningScreen from './components/OpeningScreen';
-import Fakülte from './components/Fakülte';
+import Fakülteler from './components/Fakülteler';
 import Kütüphane from './components/Kütüphane';
 import Akademik from './components/Akademik';
 import SayılarlaKou from './components/SayılarlaKou';
+import FakülteTanıtımları from './components/FakülteTanıtımları';
+import UluslarArası from './components/UluslarArası';
 
 
   
@@ -14,8 +16,12 @@ function Sayılar() {
       <div>   
         <OpeningScreen/>
         <SayılarlaKou/>
-        <Fakülte/>
-        <Akademik/>
+        <Fakülteler/>
+        <Akademik/>       
+
+        <FakülteTanıtımları/>          
+         <UluslarArası/>
+  
         <Kütüphane/>
       </div>
 

@@ -26,6 +26,7 @@ function Akademik(){
 
 
 
+   <center><p style={{fontSize:24}}>Öğretim Görevlisi İstatistiği</p></center>
 
 <div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
 
@@ -51,30 +52,34 @@ data={[
 <text x="50%" y="50%" textAnchor="middle" stroke="rgb(87,87,87)" strokeWidth="1px" dy=".3em" fontSize="32px">1200</text>
 </svg>
 
-</div>
 
-
-   <center><h3>Öğretim Görevlisi İstatistiği</h3></center>
-            <hr style={{width:"75%"}}/>
-  <div style={{display:"flex",flexDirection: "column",alignItems:'center',alignSelf:"center"}}>
+<div style={{display:"flex",flexDirection: "column"}}>
 <div style={{display:"flex",alignItems:"center"}}>
-<IoIosSquare style={{minWidth:40,minHeight:40}} color="rgba(9,163,80,1)" /> 
-<h5>Önlisans Program Sayısı: 400</h5>
+<IoIosSquare style={{minWidth:30,minHeight:30}} color="rgba(9,163,80,1)" /> 
+<p style={{fontSize:18}}>Önlisans Program Sayısı: 400</p>
 </div>
 
 <div style={{display:"flex",alignItems:"center"}}>
-<IoIosSquare style={{minWidth:40,minHeight:40}} color="#5091cb" /> 
-<h5>
+<IoIosSquare style={{minWidth:30,minHeight:30}} color="#5091cb" /> 
+<p style={{fontSize:18}}>
 Lisans Program Sayısı: 800
-</h5>
+</p>
 </div>
 </div>
+
+
+</div>
+
+
+
    </Slide >
             </Col>
             <Col  xs={24}  sm={24} md={24} lg={12} >
-           <Slide right>
+           <Slide right>    
+    
+    <center><p style={{fontSize:24}}>Lisansüstü Program Sayısı ve Dağılımı</p></center>
     <div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
-       
+
        <svg width={250} height={250}>
     <VictoryPie
     colorScale={[ "#f2c846" , "#d11919" ]}
@@ -89,26 +94,26 @@ Lisans Program Sayısı: 800
     />
     <text x="50%" y="50%" textAnchor="middle" stroke="rgb(87,87,87)" strokeWidth="1px" dy=".3em" fontSize="32px">540</text>
     </svg>
-       </div>
-       <center><h3>Lisansüstü Program Sayısı ve Dağılımı</h3></center>
-       <hr style={{width:"75%"}}/>
-     
-       <div style={{display:"flex",flexDirection: "column",alignItems:'center',alignSelf:"center"}}>
+    <div style={{display:"flex",flexDirection: "column"}}>
        <div style={{display:"flex",alignItems:"center"}}>
-        <IoIosSquare style={{minWidth:40,minHeight:40}} color="#f2c846" /> 
-        <h5>
+        <IoIosSquare style={{minWidth:30,minHeight:30}} color="#f2c846" /> 
+        <p style={{fontSize:18}}>
             Yüksek Lisans: 300   
-        </h5>
+        </p>
         </div>
     
         <div style={{display:"flex",alignItems:"center"}}>
-        <IoIosSquare  style={{minWidth:40,minHeight:40}} color="#d11919" /> 
-        <h5>
+        <IoIosSquare  style={{minWidth:30,minHeight:30}} color="#d11919" /> 
+        <p style={{fontSize:18}}>
           Doktora: 240   
-        </h5>
+        </p>
         </div>
      
     </div>
+
+       </div>
+     
+   
     </Slide>
             </Col>
             </Row>
