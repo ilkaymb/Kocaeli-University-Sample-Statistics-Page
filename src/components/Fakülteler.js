@@ -32,9 +32,12 @@ const labels = fakülteData.map((group) => {
     const style = {
         background: isVisible ? 'red' : 'blue'
     };
-    return(<div className="fakülte-box" style={{padding:"75px 0"}}>
-    <h1 className="header" style={{color:'white'}}>LİSANS ÖĞRENCİ SAYISI</h1>
-    <hr className="divider"/>
+    return(<div className="fakülte-box" >
+      <div style={{padding:"25px"}}>
+          <h1 className="header" style={{color:'white'}}>LİSANS ÖĞRENCİ DAĞILIMLARI</h1>
+    <hr className="divider"/>  
+      </div>
+
     
     <Content>
     <Grid fluid>
@@ -43,7 +46,7 @@ const labels = fakülteData.map((group) => {
     
     <Col  xs={24}  sm={24} md={24} lg={24}>   
     
-    <div  style={{display:"flex",width:"100%",minHeight:"100vh",justifyContent:"center",alignItems:"center"}}>
+    <div className='fakülte-svg'  style={{display:"flex",width:"100%",height:"100%",justifyContent:"center",alignItems:"center"}}>
     
     <VictoryChart 
     height={1000}

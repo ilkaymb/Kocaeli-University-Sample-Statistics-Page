@@ -11,10 +11,12 @@ function Akademik(){
 
 
     return (
-        <div className="academic-box" style={{padding:"75px 0"}}>
-         
-        <h1 className="header">AKADEMİK PERSONEL SAYISI</h1>
-        <hr className="divider"/>
+        <div className="academic-box">
+         <div style={{padding:"25px"}}>
+                  <h1 className="header">PROGRAM SAYISI ve DAĞILIMLARI</h1>
+        <hr className="divider"/>  
+         </div>
+
 
        
         <Grid fluid>
@@ -28,7 +30,7 @@ function Akademik(){
 
    <center><p style={{fontSize:24}}>Öğretim Görevlisi İstatistiği</p></center>
 
-<div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
+<div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center',flexDirection:'column',paddingBottom:50}}>
 
 
 
@@ -78,11 +80,11 @@ Lisans Program Sayısı: 800
            <Slide right>    
     
     <center><p style={{fontSize:24}}>Lisansüstü Program Sayısı ve Dağılımı</p></center>
-    <div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
+    <div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center',flexDirection:'column',paddingBottom:50}}>
 
        <svg width={250} height={250}>
     <VictoryPie
-    colorScale={[ "#f2c846" , "#d11919" ]}
+    colorScale={[ "#f2c846" , "#d11919"]}
     standalone={false}
     width={250} height={250}
     innerRadius={90}

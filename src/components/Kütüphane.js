@@ -12,9 +12,12 @@ function Kütüphane(){
 
 
     return (
-    <div className="kütüphane-box" style={{padding:"75px 0"}}>
-                <h1 className="header" style={{color:'rgba(9,163,80,1)'}}>KÜTÜPHANE</h1>
-                <hr className="divider"/>
+    <div className="kütüphane-box">
+        <div style={{padding:"25px"}}>
+            <h1 className="header" style={{color:'white'}}>KÜTÜPHANE</h1>
+                <hr className="divider" />
+        </div>
+                
 
                 <TrackVisibility once>
                 {({ isVisible }) => isVisible ?
@@ -22,7 +25,7 @@ function Kütüphane(){
                    
                 <Col lg={8} md={12} sm={24} xs={24}>
               
-                <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:20,color:'rgba(9,163,80,1)',height:"20vh"}}>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:20,color:'white',height:"20vh"}}>
                           <BiBookBookmark size={"15vh"} />
                 <div>
                     <h1 > 
@@ -38,7 +41,7 @@ function Kütüphane(){
               
                 </Col>
                 <Col lg={8} md={12} sm={24} xs={24}>
-                <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:20,color:'rgba(9,163,80,1)',height:"20vh"}}>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:20,color:'white',height:"20vh"}}>
                           <BiBookReader size={"15vh"} />
                 <div >
                 <h1>
@@ -54,7 +57,7 @@ function Kütüphane(){
              
                 </Col>
                 <Col  lg={8} md={24} sm={24} xs={24}>
-                <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:20,color:'rgba(9,163,80,1)',height:"20vh"}}>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:20,color:'white',height:"20vh"}}>
                           <BiBookOpen size={"15vh"}  />
                 <div >
                 <h1>

@@ -25,13 +25,15 @@ function SayılarlaKou(){
   
 
     return (
-     <div style={{padding:"75px 0"}}>
+     <div className='sayılarla-kou-box'>
              
-    <div className="show-container">
 <Container>
-<Header>                
- <h1 className="header">SAYILARLA KOU</h1>
- <hr className="divider"/>
+<Header>   
+    <div  style={{padding:"25px "}}>
+     <h1 className="header">SAYILARLA KOU</h1>
+     <hr className="divider"/>
+
+    </div>             
 
 
 </Header>
@@ -83,8 +85,6 @@ function SayılarlaKou(){
 </Content>
 </Container>
 
-</div>
-   
          </div>
     );
 }

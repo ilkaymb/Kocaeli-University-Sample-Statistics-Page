@@ -8,6 +8,9 @@ import Akademik from './components/Akademik';
 import SayılarlaKou from './components/SayılarlaKou';
 import FakülteTanıtımları from './components/FakülteTanıtımları';
 import UluslarArası from './components/UluslarArası';
+import AkademikPersonel from './components/AkademikPersonel';
+import Burslar from './components/Burslar';
+import Arge from './components/Arge';
 
 
   
@@ -18,11 +21,13 @@ function Sayılar() {
         <SayılarlaKou/>
         <Fakülteler/>
         <Akademik/>       
-
+        <AkademikPersonel/>
         <FakülteTanıtımları/>          
          <UluslarArası/>
   
         <Kütüphane/>
+        <Burslar/>
+        <Arge/>
       </div>
 
  

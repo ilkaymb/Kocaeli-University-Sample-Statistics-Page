@@ -1,4 +1,4 @@
-import logo from '../images/kocaeli-universitesi-logo.png';
+import logo from '../images/logo.png';
 
 function OpeninScreen(){
 
