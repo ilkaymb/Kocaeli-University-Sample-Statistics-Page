@@ -2,8 +2,10 @@
 import {VictoryBar,VictoryChart,VictoryLabel,VictoryAxis} from 'victory';
 import TrackVisibility from 'react-on-screen';
 
-import { Grid, Row, Col ,Content} from 'rsuite';
-
+import {  Col ,Content,FlexboxGrid} from 'rsuite';
+import akademikImg from '../images/akademikPersonel.png'
+import { IoMdPerson } from "react-icons/io"
+import { useMediaQuery } from 'react-responsive'
 
 const Roboto = "'Roboto', sans-serif";
 
@@ -28,30 +30,64 @@ const labels = fakülteData.map((group) => {
     return `${group.y} Öğrenci`;
   });
 
+
+  const Card = props => (
+    <div className='card-design' style={{width:'100%',height:'100%',display:'flex',justifyContent:"center",alignItems:'space-evenly',flexDirection:"column",gap:20}}>       
+            <IoMdPerson size='10vh'/>
+   
+    <div style={{color:'white'}}>
+                    <h1 >{props.number}</h1>
+        <h4 >{props.title}</h4>
+    </div>
+    </div>
+
+);
+
   const ComponentToTrack = ({ isVisible }) => {
     const style = {
         background: isVisible ? 'red' : 'blue'
     };
-    return(<div className="fakülte-box" >
-      <div style={{padding:"25px"}}>
-          <h1 className="header" style={{color:'white'}}>LİSANS ÖĞRENCİ DAĞILIMLARI</h1>
-    <hr className="divider"/>  
-      </div>
+
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+      const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
+
+
+    return(
+    
+    
 
     
-    <Content>
-    <Grid fluid>
+    <Content>    
+      <div className="lisans-öğrenci-box" >
+
+  <div style={{padding:"25px"}}>
+          <h1 className="header" style={{color:'white',fontSize: (isBigScreen ? '44px' :( isDesktopOrLaptop ? '40px':'28px') )}}>LİSANS ÖĞRENCİ DAĞILIMLARI</h1>
+    <hr className="divider"/>  
+      </div>
+    <FlexboxGrid justify="center">
+      <FlexboxGrid.Item as={Col}  xs={24}  sm={24} md={24} lg={4} > 
+      <FlexboxGrid.Item as={Col}  xs={24}  sm={24} md={24} lg={24} > 
+
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+ <div style={{width:"100%",height:'40vh'}}>
+
+<Card title={"Lisans Öğrenci Sayısı"} number={"15.209"} image={akademikImg}/>
+ </div>
+                </div>
+          </FlexboxGrid.Item>
+          
+</FlexboxGrid.Item>
+      <FlexboxGrid.Item as={Col}  xs={24}  sm={24} md={24} lg={12} >  
+
+        <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",minHeight:'80vh'}}>
+        <div style={{width:"100%",height:'100%'}}>
+        <div  style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
     
-    <Row className="show-grid">
-    
-    <Col  xs={24}  sm={24} md={24} lg={24}>   
-    
-    <div className='fakülte-svg'  style={{display:"flex",width:"100%",height:"100%",justifyContent:"center",alignItems:"center"}}>
-    
-    <VictoryChart 
-    height={1000}
-    width={2000}
-    domainPadding={{ x: 0, y: 0 }}
+    <VictoryChart
+  domainPadding={{ x: 25 }}
+  padding={{ top: 10, bottom: 10, right: 0, left: 10 }} 
+    height={(isBigScreen ? 650 :( isDesktopOrLaptop ? 600:1200) )}
+    width={(isBigScreen ? 800 :( isDesktopOrLaptop ? 800:1000) )}
     
     >  
     
@@ -63,7 +99,7 @@ const labels = fakülteData.map((group) => {
     labelComponent={<VictoryLabel textAnchor="start" />}
     style={{
     tickLabels: {
-    fontSize: 22,
+    fontSize: (isBigScreen ? '18px' :( isDesktopOrLaptop ? '20px':'26px') ),
     fill: 'white',
     fontFamily: Roboto,
     
@@ -78,7 +114,7 @@ const labels = fakülteData.map((group) => {
     style={{
     data: { fill: "rgba(9,163,80,1)" },
     labels:{
-    fontSize: 16,
+    fontSize:  (isBigScreen ? '16px' :( isDesktopOrLaptop ? '18px':'22px') ),
     fill: 'white',
     fontFamily: Roboto,
     
@@ -114,17 +150,21 @@ const labels = fakülteData.map((group) => {
     
     
     </div>
+</div>
+        </div>
     
-    </Col>
-    </Row>
-    </Grid>
+        </FlexboxGrid.Item>
+    </FlexboxGrid>
+
+
+  </div>
     </Content>
     
     
     
     
     
-    </div>
+  
     
     
       

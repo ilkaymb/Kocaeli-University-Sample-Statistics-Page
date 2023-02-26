@@ -4,16 +4,18 @@ import Slide from 'react-reveal/Slide';
 import {VictoryPie} from 'victory';
 import { IoIosSquare } from "react-icons/io";
 import { Grid, Row, Col } from 'rsuite';
+import { useMediaQuery } from 'react-responsive'
 
 
-function Akademik(){
-
+function Program(){
+    const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+    const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
 
 
     return (
         <div className="academic-box">
          <div style={{padding:"25px"}}>
-                  <h1 className="header">PROGRAM SAYISI ve DAĞILIMLARI</h1>
+                  <h1 className="header" style={{fontSize: (isBigScreen ? '44px' :( isDesktopOrLaptop ? '40px':'28px') )}}>PROGRAM SAYISI ve DAĞILIMLARI</h1>
         <hr className="divider"/>  
          </div>
 
@@ -28,7 +30,7 @@ function Akademik(){
 
 
 
-   <center><p style={{fontSize:24}}>Öğretim Görevlisi İstatistiği</p></center>
+   <center><p style={{fontSize: (isBigScreen ? '24px' :( isDesktopOrLaptop ? '22px':'20px') )}}>Program Sayısı ve Dağılımları</p></center>
 
 <div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center',flexDirection:'column',paddingBottom:50}}>
 
@@ -58,12 +60,14 @@ data={[
 <div style={{display:"flex",flexDirection: "column"}}>
 <div style={{display:"flex",alignItems:"center"}}>
 <IoIosSquare style={{minWidth:30,minHeight:30}} color="rgba(9,163,80,1)" /> 
-<p style={{fontSize:18}}>Önlisans Program Sayısı: 400</p>
+<p style={{fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>
+    Önlisans Program Sayısı: 400
+</p>
 </div>
 
 <div style={{display:"flex",alignItems:"center"}}>
 <IoIosSquare style={{minWidth:30,minHeight:30}} color="#5091cb" /> 
-<p style={{fontSize:18}}>
+<p style={{fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>
 Lisans Program Sayısı: 800
 </p>
 </div>
@@ -79,7 +83,7 @@ Lisans Program Sayısı: 800
             <Col  xs={24}  sm={24} md={24} lg={12} >
            <Slide right>    
     
-    <center><p style={{fontSize:24}}>Lisansüstü Program Sayısı ve Dağılımı</p></center>
+    <center><p style={{fontSize: (isBigScreen ? '24px' :( isDesktopOrLaptop ? '22px':'20px') )}}>Lisansüstü Program Sayısı ve Dağılımı</p></center>
     <div style={{display:"flex",justifyContent:'center',alignItems:'center',alignSelf:'center',flexDirection:'column',paddingBottom:50}}>
 
        <svg width={250} height={250}>
@@ -99,14 +103,14 @@ Lisans Program Sayısı: 800
     <div style={{display:"flex",flexDirection: "column"}}>
        <div style={{display:"flex",alignItems:"center"}}>
         <IoIosSquare style={{minWidth:30,minHeight:30}} color="#f2c846" /> 
-        <p style={{fontSize:18}}>
+        <p style={{fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>
             Yüksek Lisans: 300   
         </p>
         </div>
     
         <div style={{display:"flex",alignItems:"center"}}>
         <IoIosSquare  style={{minWidth:30,minHeight:30}} color="#d11919" /> 
-        <p style={{fontSize:18}}>
+        <p style={{fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>
           Doktora: 240   
         </p>
         </div>
@@ -131,4 +135,4 @@ Lisans Program Sayısı: 800
     );
 }
 
-export default Akademik;
+export default Program;

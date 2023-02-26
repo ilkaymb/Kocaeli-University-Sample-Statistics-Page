@@ -13,7 +13,7 @@ import Fade from 'react-reveal/Fade';
 
 const Card = props => (
     <>
-        <div className='card-design' style={{backgroundImage:`url(${props.image})`}}>       
+        <div className='card-design' style={{backgroundImage:`linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(${props.image})`}}>       
             <h1>{props.number}</h1>
             <h4>{props.title}</h4>
         </div>

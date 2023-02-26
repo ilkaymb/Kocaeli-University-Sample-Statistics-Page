@@ -2,18 +2,18 @@
 
 
 body, html {
-    width: 100vw;
-
     font-family: 'Roboto', sans-serif;
     font-weight: normal; 
   }
 
-
+  html {
+    scroll-behavior: smooth;
+  }
 
 .opening-box{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background-image: linear-gradient(	rgba(6, 57, 128, 0.75),rgba(6, 57, 128, 0.75)),url('/src/images/openingImg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),linear-gradient(	rgba(6, 57, 128, 0.75),rgba(6, 57, 128, 0.75)),url('/src/images/openingImg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -35,11 +35,11 @@ body, html {
     
 }
 .kütüphane-box{
-width: 100vw;
+width: 100%;
     
    min-height: 50vh;
 padding-bottom: 15px;
-    background-image: linear-gradient(rgba(255, 129, 57, 0.1), rgb(255, 129, 57, 0.1)),url('/src/images/kütüphaneImg.png');
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),linear-gradient(rgba(255, 129, 57, 0.1), rgb(255, 129, 57, 0.1)),url('/src/images/kütüphaneImg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -58,17 +58,17 @@ padding-bottom: 15px;
 .kütüphane-box:before {
     content: "";
     position: absolute;
-    width: 100vw;
+    width: 100%;
    height: 100%;
 
     background: inherit;
     z-index: -1;
     padding-bottom: 15px;
 
-    filter        : blur(6px);
-    -moz-filter   : blur(6px);
-    -webkit-filter: blur(6px);
-    -o-filter     : blur(6px);
+    filter        : blur(2px);
+    -moz-filter   : blur(2px);
+    -webkit-filter: blur(2px);
+    -o-filter     : blur(2px);
 
 }
 
@@ -136,70 +136,32 @@ font-size: 36px;
 }
 
 
-.card-design:before {
-    content: "";
-    position: absolute;
-    width: 75%;
-    height:400px;
-    background: inherit;
-    z-index: 1;
-
-    filter        : blur(2px);
-    -moz-filter   : blur(2px);
-    -webkit-filter: blur(2px);
-    -o-filter     : blur(2px);
-
-}
 
 .akademik-personel-box{
-    background-image: linear-gradient(	rgba(6, 57, 128, 0.75),rgba(6, 57, 128, 0.75)),url('/src/images/akademikPersonel.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100vw;
-    min-height: 80vh;
-    -webkit-mask-image: linear-gradient(rgb(0, 0, 0,0.9), rgb(0,0,0,0.9)),url("https://upload.wikimedia.org/wikipedia/commons/1/18/Circle_frame.svg");
-    mask-image: url("https://upload.wikimedia.org/wikipedia/commons/1/18/Circle_frame.svg");
+    width: 100%;
+    min-height: 50vh;
+   
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
    
 
-    -webkit-mask-position: center;
-    mask-position: center;
-  
-    -webkit-mask-size: 0.2%;
-
-    background-attachment: fixed;
 
 }
 
 
-.akademik-personel-box:before {
-    content: "";
-    position: absolute;
-    width: 100vw;
-    height: 80vh;
-    background: inherit;
-    z-index:1;
 
-    filter        : blur(6px);
-    -moz-filter   : blur(6px);
-    -webkit-filter: blur(6px);
-    -o-filter     : blur(6px);
 
-}
 
-.akademik-personel-box * {
-
-    z-index: 2;
-
-}
 
 .header{
-    color: #5A5A5A;
+    color: rgb(90, 90, 90);
 
     font-style: normal;
 padding: 25px ;
     font-weight: 300;
-font-size: 44px;
 line-height: 48px;
 display: flex;
 justify-content: center;
@@ -208,7 +170,19 @@ text-align: center;
 letter-spacing: 4px;
 
 }
+.sub-header{
+    color: rgb(90, 90, 90);
 
+    font-style: normal;
+padding: 10px ;
+    font-weight: 150;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+letter-spacing: 2px;
+
+}
 
   .divider{
     border:0;
@@ -220,11 +194,13 @@ letter-spacing: 4px;
     line-height:2em;
   }
 
-.fakülte-box{
+.lisans-öğrenci-box{
+    width: 100%;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgba(255, 129, 57, 0.1), rgb(255, 129, 57, 0.1)),url('/src/images/fakülteImg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),linear-gradient(rgba(255, 129, 57, 0.1), rgb(255, 129, 57, 0.1)),url('/src/images/fakülteImg.png');
     -webkit-mask-image: linear-gradient(rgb(0, 0, 0,0.9), rgb(0,0,0,0.9)),url("https://upload.wikimedia.org/wikipedia/commons/1/18/Circle_frame.svg");
     mask-image: url("https://upload.wikimedia.org/wikipedia/commons/1/18/Circle_frame.svg");
    
@@ -233,8 +209,7 @@ letter-spacing: 4px;
     mask-position: center;
   
     -webkit-mask-size: 0.2%;
-    width: 100%;
-    height:100%;
+
     background-attachment: fixed;
 
 }
@@ -257,19 +232,19 @@ letter-spacing: 4px;
 
 
 .burslar-box{
-    width: 100vw;
+    width: 100%;
 
     min-height:50vh;
 
 }
 
 .arge-box{
-    width: 100vw;
+    width: 100%;
 
    
     min-height:100vh;
 
-    background-image: linear-gradient(	rgba(6, 57, 128, 0.75),rgba(6, 57, 128, 0.75)),url('/src/images/Arge.jpg');
+    background-image: linear-gradient(	rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),linear-gradient(	rgba(6, 57, 128, 0.75),rgba(6, 57, 128, 0.75)),url('/src/images/Arge.jpg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -289,16 +264,36 @@ letter-spacing: 4px;
 .arge-box:before {
     content: "";
     position: absolute;
-    width: 100vw;
+    width: 100%;
 
     min-height:100vh;
 
     background: inherit;
     z-index:-1;
 
-    filter        : blur(6px);
-    -moz-filter   : blur(6px);
-    -webkit-filter: blur(6px);
-    -o-filter     : blur(6px);
+    filter        : blur(2px);
+    -moz-filter   : blur(2px);
+    -webkit-filter: blur(2px);
+    -o-filter     : blur(2px);
+
+}
+
+.fakülte-button{
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px 0;
+    border:2px solid #5A5A5A;
+    width: 300px;
+    text-align: center;
+}
+
+.fakülte-button-blue{
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px 0;
+    border:2px solid white;
+    width: 300px;
+    color:white;
+    text-align: center;
 
 }

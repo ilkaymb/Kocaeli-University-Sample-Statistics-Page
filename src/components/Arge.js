@@ -1,193 +1,156 @@
 
-import {VictoryChart,VictoryLine,VictoryAxis,VictoryLabel} from 'victory';
-import { Grid, Row, Col } from 'rsuite';
-import { GiArchiveResearch } from "react-icons/gi";
-import { MdScience ,MdBiotech} from "react-icons/md";
+import {VictoryChart,VictoryAxis,VictoryLabel,VictoryTheme,VictoryBar,VictoryStack} from 'victory';
+import {  Col,FlexboxGrid } from 'rsuite';
+import { IoIosSquare } from "react-icons/io";
+
+import { useMediaQuery } from 'react-responsive'
+
+const getBarData = () => {
+  
+  return [1, 2, 3, 4].map(() => {
+    return [
+      { x: 1, y: Math.floor(Math.random() * 10)+1 },
+      { x: 2, y: Math.floor(Math.random() * 10)+1 },
+      { x: 3, y: Math.floor(Math.random() * 10)+1 },
+      { x: 4, y: Math.floor(Math.random() * 10)+1},
+      { x: 5, y: Math.floor(Math.random() * 10)+1 }
+    ];
+  });
+};
 
   
 function Arge() {
+
+  const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
+  const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
+
     return (
       <div className="arge-box">   
             <div style={{padding:"25px"}}>
-              <h1 className="header" style={{color:'white'}}>ARGE PROJELERİ </h1>
+              <h1 className="header" style={{color:'white',fontSize: (isBigScreen ? '44px' :( isDesktopOrLaptop ? '40px':'28px') )}}>ARGE PROJELERİ </h1>
                 <hr className="divider"/>
           </div>
 
-          <Grid fluid>
- 
 
-    <Row >
-      <Col lg={12} md={24} sm={24} xs={24} style={{padding:"25px 0"}}>
+          <FlexboxGrid justify="center">
+      <FlexboxGrid.Item as={Col}  xs={24}  sm={24} md={24} lg={24} > 
+      <div className="sub-header" style={{color:'white',display:'flex',justifyContent:'center',alignItems:'center',fontSize: (isBigScreen ? '24px' :( isDesktopOrLaptop ? '22px':'20px') )}}>Geliştirilen Arge Projelerinin yıllara göre grafiği: </div>
 
-        <div style={{width:'100%',height:450,display:'flex',justifyContent:'center',alignItems:'center',  flexWrap: 'wrap'}}> 
-              <h4 style={{color:'white',display:'flex',justifyContent:'center',alignItems:'center'}}>Geliştirilen Arge Projelerinin yıllara göre grafiği: </h4>
+      </FlexboxGrid.Item> 
 
-        <VictoryChart
-        width={400}
-        height={400}
-         style={{
-          axis: {
-            style: {
-              tickLabels: {
-                // this changed the color of my numbers to white
-                fill: 'white',
-              },
-            },
-          },
-        }}
-            minDomain={{ y: 0 }}
-            color={'white'}
-          >
-              <VictoryAxis
-    tickLabelComponent={<VictoryLabel dy={0} dx={10} angle={55}/>}
+      <FlexboxGrid.Item as={Col}  xs={24}  sm={24} md={24} lg={8} > 
 
-    style={{
-      axis: {
-        stroke: 'white'  //CHANGE COLOR OF X-AXIS
-      },
-      tickLabels: {
-        fill: 'white' ,
-        fontSize:20
-        //CHANGE COLOR OF X-AXIS LABELS
-      }, 
-      grid: {
-          stroke: 'white', //CHANGE COLOR OF X-AXIS GRID LINES
-          strokeDasharray: '7',
-      }
-    }}
-  />
+ <div style={{width:"100%",height:'60vh'}}>
+ <VictoryChart
+  domainPadding={20}
+  theme={VictoryTheme.material}>
   <VictoryAxis
-    dependentAxis
-    tickFormat={(y) => y}
+    tickValues={[1, 2, 3, 4, 5]}
+    tickFormat={["2019","2020", "2021", "2022", "2023"]}
+    tickLabelComponent={<VictoryLabel dy={0} dx={10} angle={55}/>}
     style={{
       axis: {
-        stroke: 'white' //CHANGE COLOR OF Y-AXIS
+      stroke: 'white'  //CHANGE COLOR OF X-AXIS
       },
       tickLabels: {
-        fill: 'white' //CHANGE COLOR OF Y-AXIS LABELS,
-        ,fontSize:24
+      fill: 'white' ,
+      fontSize:16
+      //CHANGE COLOR OF X-AXIS LABELS
       }, 
       grid: {
-        stroke: 'white', //CHANGE COLOR OF Y-AXIS GRID LINES
+        stroke: 'white', //CHANGE COLOR OF X-AXIS GRID LINES
         strokeDasharray: '7',
       }
-    }}
-  />
-        <VictoryLine
-          data={[
-            { x: "2019", y: 2 },
-            { x: "2020", y: 3 },
-            { x: "2021", y: 5 },
-            { x: "2022", y: 4 },
-            { x: "2023", y: 6 }
-          ]}
+      }}/>
+  <VictoryAxis
+      domain={{ y: [0, 50]}}
+
+    dependentAxis
+    tickFormat={(x) => (`${x}`)}
+    style={{
+      axis: {
+      stroke: 'white'  //CHANGE COLOR OF X-AXIS
+      },
+      tickLabels: {
+      fill: 'white' ,
+      fontSize:16
+      //CHANGE COLOR OF X-AXIS LABELS
+      }, 
+      grid: {
+        stroke: 'white', //CHANGE COLOR OF X-AXIS GRID LINES
+        strokeDasharray: '7',
+      }
+      }}/>
+  <VictoryStack
+colorScale={["rgba(9,163,80,1)", " #5091cb","#f2c846" , "#d11919"  ]}
+
+  >
+      <VictoryStack colorScale={["rgba(9,163,80,1)", " #5091cb","#f2c846" , "#d11919"  ]}>
+                {getBarData().map((data, index) => {
+                  return <VictoryBar key={index} data={data}/>;
+                })}
+       </VictoryStack>
+       <VictoryStack colorScale={["rgba(9,163,80,1)", " #5091cb","#f2c846" , "#d11919"  ]}>
+                {getBarData().map((data, index) => {
+                  return <VictoryBar key={index} data={data}/>;
+                })}
+       </VictoryStack>
+       <VictoryStack colorScale={["rgba(9,163,80,1)", " #5091cb","#f2c846" , "#d11919"  ]}>
+                {getBarData().map((data, index) => {
+                  return <VictoryBar key={index} data={data}/>;
+                })}
+       </VictoryStack>
+       <VictoryStack colorScale={["rgba(9,163,80,1)", " #5091cb","#f2c846" , "#d11919"  ]}>
+                {getBarData().map((data, index) => {
+                  return <VictoryBar key={index} data={data}/>;
+                })}
+       </VictoryStack>
+       <VictoryStack colorScale={["rgba(9,163,80,1)", " #5091cb","#f2c846" , "#d11919"  ]}>
+                {getBarData().map((data, index) => {
+                  return <VictoryBar key={index} data={data}/>;
+                })}
+       </VictoryStack>
+  </VictoryStack>
+</VictoryChart>
+ </div>
+          
+</FlexboxGrid.Item>
+<FlexboxGrid.Item as={Col}  xs={24}  sm={24} md={24} lg={4} > 
+
+<div style={{width:"100%",height:'60vh'}}>
+<div style={{display:"flex",flexDirection: "column",alignItems:'start',justifyContent:'space-evenly',alignSelf:'center',height:'100%'}}>
+<div style={{display:"flex",alignItems:"center",gap:15}}>
+<IoIosSquare style={{minWidth:30,minHeight:30}} color="rgba(9,163,80,1)" /> 
+<p style={{color:'white',fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>Araştırma Projesi</p>
+</div>
+
+<div style={{display:"flex",alignItems:"center",gap:15}}>
+<IoIosSquare style={{minWidth:30,minHeight:30}} color="#5091cb" /> 
+<p style={{color:'white',fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>Sonuçlandrılımış Deney</p>
+</div>
+<div style={{display:"flex",alignItems:"center",gap:15}}>
+<IoIosSquare style={{minWidth:30,minHeight:30}} color="#f2c846" /> 
+<p style={{color:'white',fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>Araştırma Projesi</p>
+</div>
+<div style={{display:"flex",alignItems:"center",gap:15}}>
+<IoIosSquare style={{minWidth:30,minHeight:30}} color="#d11919" /> 
+<p style={{color:'white',fontSize: (isBigScreen ? '20px' :( isDesktopOrLaptop ? '18px':'16px') )}}>Tez Çalışması</p>
+</div>
+
+</div> 
+</div>
          
-          style={{
-            data: { stroke: "rgba(9,163,80,1)",     strokeWidth: 5 ,fontSize:16    },
-            parent: { border: "1px solid #ccc",fontSize:16},
-         
-          }}
-        />
-      </VictoryChart>
-        </div>
-        
-      </Col>
-      <Col lg={12} md={24} sm={24} xs={24} >
-        <div style={{display:'flex',  alignContent: 'space-between',flexWrap: 'wrap'}}>
-        <Col lg={12} md={12} sm={24} xs={24}>
-        <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',alignSelf:'center',color:'white',  height: 150}}>
-              <GiArchiveResearch size={120} />
-              <div style={{display:'flex',flexDirection:'column'}}>
-                    <h2>
-                    112
-                    </h2>
-                    <h4>
-                    Araştırma Projesi
-                    </h4>
-              </div>
-      
-        </div>
+</FlexboxGrid.Item>
+          
 
 
-      </Col>
-      <Col lg={12} md={12} sm={24} xs={24}>
-      <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',alignSelf:'center',color:'white',  height: 150}}>
-      <MdScience size={120} />
-              <div style={{display:'flex',flexDirection:'column'}}>
-                    <h2>
-                    85
-                    </h2>
-                    <h4>
-                    Sonuçlanmış Deney
-                    </h4>
-              </div>
-      
-        </div>
- 
+    
+    </FlexboxGrid>
 
-
-      </Col>
-  
-
-
-      <Col lg={12} md={12} sm={24} xs={24}>
-        <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',alignSelf:'center',color:'white',  height: 150}}>
-              <MdBiotech size={120} />
-              <div style={{display:'flex',flexDirection:'column'}}>
-                    <h2>
-                    112
-                    </h2>
-                    <h4>
-                    Araştırma Projesi
-                    </h4>
-              </div>
-      
-        </div>
-
-
-      </Col>
-      <Col lg={12} md={12} sm={24} xs={24}>
-        <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',alignSelf:'center',color:'white',  height: 150}}>
-              <GiArchiveResearch size={120} />
-              <div style={{display:'flex',flexDirection:'column'}}>
-                    <h2>
-                    112
-                    </h2>
-                    <h4>
-                    Araştırma Projesi
-                    </h4>
-              </div>
-      
-        </div>
-
-
-      </Col>
-      </div>
      
-      <Col lg={24} md={24} sm={24} xs={24}>
-  <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',alignSelf:'center',color:'white',  height: 150}}>
-        <div style={{display:'flex',flexDirection:'column'}}>
-        <h4>
-              2022 Yılında
+       
 
-              </h4>
-              <h2>
-              Toplam 822 Proje 
-              </h2>
-        </div>
-
-  </div>
-
-
-</Col>
-
-      </Col>
-
-    </Row>
-  </Grid>
-
-
-      </div>
+</div>
 
  
     );
