@@ -1,11 +1,11 @@
 Sayılarla KOU Örnek Tasarımdır.
 Projede kullanılan paketler.
-1.react-icons: icon'lar için kullanılan kütüphane. İconlara https://react-icons.github.io/react-icons adresinden ulaşabilirsiniz.
-2.react-on-screen: Ekrana giren component'lerin animasyonunu tetiklemek için.
-3.react-responsive: Responsive tasarımda için.
-3.react-reveal: Ekrana giren componentin animasyonu için.
-4.victory: Oluşturulan tablo ve grafikler için.
-5.rsuite: Hazır UI kütüphanesi
+1. react-icons: icon'lar için kullanılan kütüphane. İconlara https://react-icons.github.io/react-icons adresinden ulaşabilirsiniz.
+2. react-on-screen: Ekrana giren component'lerin animasyonunu tetiklemek için.
+3. react-responsive: Responsive tasarımda için.
+3. react-reveal: Ekrana giren componentin animasyonu için.
+4. victory: Oluşturulan tablo ve grafikler için.
+5. rsuite: Hazır UI kütüphanesi
 
 ![7a43c5bfa5f0c0b93cb6a6ceb632a749](https://user-images.githubusercontent.com/73322500/221422178-2a15afc8-d349-49b5-8f04-2483866fbe92.jpeg)
 
